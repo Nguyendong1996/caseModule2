@@ -113,6 +113,7 @@ public class SingleUpLoginManage extends ReadAndWire {
         return checkFlag;
     }
     public void changePassword(){
+        listSingleUpLogins =read(file,listSingleUpLogins);
         System.out.println("Enter a Account ");
         String account = scanner.nextLine();
         System.out.println("Enter a Email");
@@ -120,9 +121,10 @@ public class SingleUpLoginManage extends ReadAndWire {
         boolean check = checkValidate(email,"^[\\w-_\\.]+@[\\w]+\\.+(com|vn)$");
         System.out.println("enter a  PassWord");
         String passWord = scanner.nextLine();
+        boolean check1 = false;
         if (check){
             for (SingleUpLogin listSingleUpLogin : listSingleUpLogins) {
-                if (listSingleUpLogin.getAccount().equals(account) & listSingleUpLogin.getEmail().equals(email) &&
+                if (listSingleUpLogin.getAccount().equals(account) && listSingleUpLogin.getEmail().equals(email) &&
                         listSingleUpLogin.getPassWork().equals(passWord)) {
                     System.out.println("Enter  new PassWord");
                     String newPassWord = scanner.nextLine();
@@ -130,14 +132,33 @@ public class SingleUpLoginManage extends ReadAndWire {
                     String newPassWord1 = scanner.nextLine();
                     if (newPassWord1.equals(newPassWord)) {
                         listSingleUpLogin.setPassWork(newPassWord);
+                        check1 = true;
+                        System.out.println("Change password successfully");
                     } else {
                         System.out.println("re-enter the new password is not the same");
                     }
-                } else {
-                    System.out.println("you entered wrong ! Please re-enter");
                 }
             }
+            if (!check1){
+                System.out.println("Incorrect account or password");
+            }
+        }else {
+            System.out.println("Email is incorrect ! Please re-enter");
         }
+        write(file,listSingleUpLogins);
 
+    }
+    public boolean loginAdmin(){
+        System.out.println("Enter a account");
+        String account = scanner.nextLine();
+        System.out.println("Enter a passWord");
+        String passWord = scanner.nextLine();
+        if (account.equals("admin")&& passWord.equals("123456")){
+            System.out.println("Login success !");
+            return true;
+        }else {
+            System.out.println("account or passWork incorrect ! please re-enter.");
+            return false;
+        }
     }
 }

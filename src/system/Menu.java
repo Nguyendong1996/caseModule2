@@ -2,6 +2,7 @@ package system;
 
 import impl.CategoryManage;
 import impl.ProductManage;
+import impl.ProductSoldManage;
 import impl.SingleUpLoginManage;
 
 import java.util.Scanner;
@@ -10,12 +11,15 @@ public class Menu {
         Scanner scanner;
         CategoryManage categoryManage = new CategoryManage();
         ProductManage productManage = new ProductManage(categoryManage);
+        ProductSoldManage productSoldManage = new ProductSoldManage();
         public Menu() {
             this.scanner = new Scanner(System.in);
         }
         public void menuShop(SingleUpLoginManage singleUpLoginManage) {
             int choice =0;
             do {
+                System.out.println("-------------------------------------");
+                System.out.println("Menu ");
                 System.out.println("1 : home Page !");
                 System.out.println("2 : Product !");
                 System.out.println("3 : Introduce Shop !");
@@ -23,6 +27,7 @@ public class Menu {
                 System.out.println("5 : News !");
                 System.out.println("6 : Register as an agent");
                 System.out.println("7 : Login !");
+                System.out.println("8 : change Password" );
                 System.out.println("0 : Exits !!!!!!");
                 System.out.println("Enter your choice");
                 try {
@@ -30,36 +35,40 @@ public class Menu {
                 }catch (Exception e){
                     System.out.println("What's your choice? Please re-enter !");
                 }
-                if (choice<0|| choice>7){
+                if (choice<0|| choice>8){
                     System.out.println("What's your choice? Please re-enter !");
                 }else {
                 switch (choice) {
-                    case 1: break;
-                    case 2:productManage.disPlay();break;
+                    case 1:
+                        System.out.println("is in the process of development"); break;
+                    case 2:productManage.display();break;
                     case 3:
+                        System.out.println("is in the process of development");break;
                     case 4:searchProduct();break;
                     case 5:
+                        System.out.println("is in the process of development");break;
                     case 6:singleUpLoginManage.Register();break;
                     case 7: {
                             boolean check = singleUpLoginManage.Login();
                             if (check) {
-                                ManageShop();
+                                manageShop();
                                 break;
                             } else {
                             System.out.println("Username or password incorrect . please try again or subscribe!");
                         }
                     }
                     break;
+                    case 8 : singleUpLoginManage.changePassword();break;
                 }}
             } while (choice != 0);
         }
 
-        public void ManageShop() {
+        public void manageShop() {
             int choice= 0;
             do {
                 System.out.println("1 : home Page ");
                 System.out.println("2 : Product ");
-                System.out.println("3 : Introduce Shop ");
+                System.out.println("3 : warehouse ");
                 System.out.println("4 : Search Product by name ");
                 System.out.println("5 : Sales Center  ");
                 System.out.println("6 : home Category ");
@@ -76,10 +85,12 @@ public class Menu {
                 }else {
                     switch (choice) {
                         case 1:
+                            System.out.println("is in the process of development");break;
                         case 2:
-                            productManage.disPlay();
+                            productManage.display();
                             break;
                         case 3:
+                            menuWarehouse();break;
                         case 4:
                             searchProduct();
                             break;
@@ -121,7 +132,7 @@ public class Menu {
                         categoryManage.upDate(productManage);
                         break;
                     case 3:
-                        categoryManage.disPlay();
+                        categoryManage.display();
                         break;
                     case 4:
                         categoryManage.deleteCategory(productManage);
@@ -149,8 +160,8 @@ public class Menu {
                 }else {
                 switch (choice){
                     case 1:productManage.add();break;
-                    case 2:productManage.upDate();break;
-                    case 3:productManage.disPlay();break;
+                    case 2:productManage.update();break;
+                    case 3:productManage.display();break;
                     case 4:productManage.delete();break;
                 }}
             }while (choice != 0);
@@ -175,7 +186,7 @@ public class Menu {
                             productManage.warehouseProduct();
                             break;
                         case 2:
-                            productManage.sellProduct();
+                            productManage.sellProduct(productSoldManage);
                             break;
                     }
                 }
@@ -205,6 +216,32 @@ public void searchProduct(){
                         case 2:
                             productManage.searchByPrice();
                             break;
+                    }
+                }
+            }while (choice != 0);
+}
+public void menuWarehouse(){
+            int choice = 0;
+            do {
+                System.out.println("---------------------------------------------");
+                System.out.println("Menu");
+                System.out.println("1 : inventory  by category");
+                System.out.println("2 : display product with smaller quantity by quantity input");
+                System.out.println("3 :  total money amount");
+                System.out.println("0 : Exits !!!");
+                System.out.println("Enter your choice ");
+                try {
+                    choice = Integer.parseInt(scanner.nextLine());
+                }catch (Exception e){
+                    System.out.println("What's your choice? Please re-enter !");
+                }
+                if (choice<0|| choice>3){
+                    System.out.println("What's your choice? Please re-enter !");
+                }else {
+                    switch (choice){
+                        case 1:productManage.inventoryByCategory();break;
+                        case 2:productManage.displayProductWithSmallerQuantityByQuantityInput();break;
+                        case 3:productManage.totalMoneyAmount();break;
                     }
                 }
             }while (choice != 0);

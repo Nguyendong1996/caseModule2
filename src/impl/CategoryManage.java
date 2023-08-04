@@ -4,7 +4,6 @@ import model.Category;
 import service.Generate;
 import service.ReadAndWire;
 import java.util.List;
-import java.util.Objects;
 import java.util.Scanner;
 
 public class CategoryManage extends ReadAndWire implements Generate{
@@ -32,9 +31,9 @@ public class CategoryManage extends ReadAndWire implements Generate{
     }
 
     @Override
-    public void upDate(){}
+    public void update(){}
     public void upDate(ProductManage productManage) {
-        disPlay();
+        display();
         System.out.println("Enter a Category");
         int index =Integer.parseInt(scanner.nextLine());
         if (index<0||index>categories.size()){
@@ -62,7 +61,7 @@ public class CategoryManage extends ReadAndWire implements Generate{
     }
 
     @Override
-    public void disPlay() {
+    public void display() {
         categories =read(fileCategory,categories);
         for (int i = 0; i < categories.size(); i++) {
             System.out.println((i+1) + " :"+categories.get(i) );
@@ -72,7 +71,7 @@ public class CategoryManage extends ReadAndWire implements Generate{
     @Override
     public void delete(){};
     public void deleteCategory(ProductManage productManage) {
-        disPlay();
+        display();
         System.out.println("input Category delete");
         int input =0;
         try {
@@ -103,7 +102,7 @@ public class CategoryManage extends ReadAndWire implements Generate{
         int index=0;
         try {index = Integer.parseInt(scanner.nextLine());}
         catch (Exception e){
-            e.printStackTrace();
+            System.out.println("you entered wrong . Please re-enter");;
         }
         for (int i = 0; i < categories.size(); i++) {
             if ((index-1)== i){
