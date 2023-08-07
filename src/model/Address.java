@@ -59,5 +59,6 @@ public class Address implements Serializable {
                 ", ward='" + ward + '\'' +
                 ", detail='" + detail + '\'' +
                 '}';
+//        return String.format("%-15s%-20s%-25s%-20s%-15d",this.city,this.District,this.ward,this.detail);
     }
 }

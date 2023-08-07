@@ -134,6 +134,7 @@ public class ProductManage extends ReadAndWire implements Generate{
     @Override
     public void display() {
         products =read(fileProduct,products);
+//        System.out.printf("%-15s%-30s%-25s%-20s%-15s\n","ID","Name Product","Price","Quantity","Category");
         for (int i = 0; i < products.size(); i++) {
             System.out.println((i+1) + " :" +products.get(i));
         }

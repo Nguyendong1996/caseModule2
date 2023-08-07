@@ -69,5 +69,6 @@ public class Product implements Serializable {
                 ", color='" + color + '\'' +
                 ", Category='" + category + '\'' +
                 '}';
+//        return String.format("%-15d%-30s%-25s%-20s%-15s",this.id,this.nameProduct,this.price,this.quantity,this.category);
         }
 }

@@ -34,5 +34,6 @@ public class ProductSold implements Serializable {
                 ", quantity='" + quantity + '\'' +
                 ", localDateTime=" + localDateTime +
                 '}';
+//        return String.format("%-15s%-20s%-25s%-20s%-15d",this.nameProduct,this.price,this.quantity,this.localDateTime);
     }
 }

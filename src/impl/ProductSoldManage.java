@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class ProductSoldManage extends ReadAndWire {
     Scanner scanner;
-    private List<ProductSold> listProductSold = new ArrayList<>();
+    private List<ProductSold> listProductSold ;
     private final String fileProductSold = "/Users/admin/IdeaProjects/CaseModule2/src/io/FileProductSolds";
 
     public ProductSoldManage() {

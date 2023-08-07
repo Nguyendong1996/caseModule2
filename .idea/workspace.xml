@@ -4,23 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73d64ea3-5ffe-4723-9ed5-aff09b006941" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/io/FileCategorys" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/io/FileProductSolds" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/io/FileProducts" afterDir="false" />
+    <list default="true" id="73d64ea3-5ffe-4723-9ed5-aff09b006941" name="Changes" comment="add file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/impl/CategoryManage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/impl/CategoryManage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/impl/ProductManage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/impl/ProductManage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/impl/ProductSoldManage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/impl/ProductSoldManage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/FileBuyer" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/FileBuyer" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/FileProduct" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/FileProduct" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/FileProductSolds" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/FileProductSolds" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/FileProducts" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/FileProducts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Buyer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Buyer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Category.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/ProductSold.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ProductSold.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/MyMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/MyMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,12 +115,17 @@
       <workItem from="1691118538181" duration="13680000" />
       <workItem from="1691166397469" duration="701000" />
       <workItem from="1691230232033" duration="2179000" />
-      <workItem from="1691241953341" duration="8970000" />
+      <workItem from="1691241953341" duration="13571000" />
+      <workItem from="1691395722990" duration="548000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add file" />
+    <option name="LAST_COMMIT_MESSAGE" value="add file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
