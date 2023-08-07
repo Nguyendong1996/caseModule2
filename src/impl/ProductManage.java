@@ -1,15 +1,15 @@
 package impl;
-
-import model.Buyer;
 import model.Category;
 import model.Product;
 import service.Generate;
 import service.ReadAndWire;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class ProductManage extends ReadAndWire implements Generate{
-    public final String fileProduct = "/Users/admin/IdeaProjects/CaseModule2/src/io/FileProduct";
+    public final String fileProduct = "/Users/admin/IdeaProjects/CaseModule2/src/io/FileProducts";
      Scanner scanner;
     private List<Product> products;
     private final CategoryManage categoryManage;
@@ -31,11 +31,7 @@ public class ProductManage extends ReadAndWire implements Generate{
         do {
         System.out.println("Enter a price");
         price = scanner.nextLine();
-        if (checkValidate(price,"^\\d{1,12}")){
-            flag = true;
-        }else {
-            flag =false;
-        }
+            flag = checkValidate(price, "^\\d{1,12}");
         }
         while (!flag);
         boolean flag1;
@@ -43,11 +39,7 @@ public class ProductManage extends ReadAndWire implements Generate{
         do {
             System.out.println("Enter a quantity");
             quantity = scanner.nextLine();
-            if (checkValidate(quantity,"^\\d{1,6}")){
-                flag1 =true;
-            }else {
-                flag1= false;
-            }
+            flag1 = checkValidate(quantity, "^\\d{1,6}");
         }while (!flag1);
         System.out.println("Enter a color");
         String color = scanner.nextLine();
@@ -72,6 +64,7 @@ public class ProductManage extends ReadAndWire implements Generate{
     @Override
     public void add() {
             products.add(getProduct());
+        System.out.println("more successful products");
         write(fileProduct,products);
     }
 
@@ -131,6 +124,7 @@ public class ProductManage extends ReadAndWire implements Generate{
             Category category = categoryManage.checkId();
             if(category != null){
             product.setCategory(category);}
+            System.out.println("Successful product repair");
         }else {
             System.out.println("The id product is no on list");
         }
@@ -151,6 +145,7 @@ public class ProductManage extends ReadAndWire implements Generate{
         Product product = checkId();
         if (product != null){
             products.remove(product);
+            System.out.println("Delete product successfully");
         }else {
             System.out.println("The id product is no on list");
         }
@@ -243,9 +238,9 @@ public class ProductManage extends ReadAndWire implements Generate{
         int total;
         for (int i = 0; i < categoryManage.getCategories().size(); i++) {
             total =0;
-            for (int j = 0; j < products.size(); j++) {
-                if (categoryManage.getCategories().get(i).getNameCategory().equals(products.get(j).getCategory().getNameCategory())){
-                    total += Integer.parseInt(products.get(j).getQuantity());
+            for (Product product : products) {
+                if (categoryManage.getCategories().get(i).getNameCategory().equals(product.getCategory().getNameCategory())) {
+                    total += Integer.parseInt(product.getQuantity());
                 }
             }
             System.out.println((i+1)+" :" +categoryManage.getCategories().get(i).getNameCategory() + " Quantity :" + total);
@@ -256,6 +251,7 @@ public class ProductManage extends ReadAndWire implements Generate{
         String quantity = scanner.nextLine();
         boolean check = categoryManage.checkValidate(quantity,"^\\d{1,6}");
         if (check){
+            System.out.println("product list with smaller quantity : " + quantity);
             for (Product product : products) {
                 if (Integer.parseInt(quantity) >= Integer.parseInt(product.getQuantity())) {
                     System.out.println(product);
@@ -356,20 +352,26 @@ public class ProductManage extends ReadAndWire implements Generate{
     }
     }
     public void singleCheck(){
+        if(buyerManage.getBuyerList().isEmpty()){
+            System.out.println("No orders yet");
+        }else {
         for (int i = 0; i < buyerManage.getBuyerList().size(); i++) {
             System.out.println((i+1) +" :" +buyerManage.getBuyerList().get(i));
+        }
         }
     }
     public void orderConfirmation(ProductSoldManage productSoldManage){
         int choice = 0;
         singleCheck();
+        boolean check = false;
+        if(!buyerManage.getBuyerList().isEmpty()){
         System.out.println("select the order to confirm");
         try {
             choice = Integer.parseInt(scanner.nextLine());
         } catch (Exception e) {
             System.out.println("What's your choice? Please re-enter !");
         }
-        int total =0 ;
+        int total ;
         for (int i = 0; i < buyerManage.getBuyerList().size(); i++) {
             if ((choice-1)== i){
                 for (Product product : products) {
@@ -377,14 +379,50 @@ public class ProductManage extends ReadAndWire implements Generate{
                         total = Integer.parseInt(product.getQuantity()) - Integer.parseInt(buyerManage.getBuyerList().get(i).getQuantity());
                         product.setQuantity(String.valueOf(total));
                         productSoldManage.add(product.getNameProduct(),product.getPrice(),buyerManage.getBuyerList().get(i).getQuantity());
+                        System.out.println("successful confirmation");
+                        check = true;
                     }
                 }
                 buyerManage.getBuyerList().remove((choice-1));
             }
 
         }
+        if (!check){
+            System.out.println("Invalid choice please check again");
+        }
         write(fileProduct,products);
         write("/Users/admin/IdeaProjects/CaseModule2/src/io/FileBuyer",buyerManage.getBuyerList());
+    }
+    }
+    public void displayMinMax(){
+        for (int i = 0; i < products.size(); i++) {
+            for (int j = products.size()-1; j >i ; j--) {
+                if (Integer.parseInt(products.get(j-1).getPrice())>Integer.parseInt(products.get(j).getPrice())){
+                    Product temp = products.get(j);
+                    products.set(j,products.get(j-1));
+                    products.set(j-1,temp);
+
+                }
+            }
+        }
+        for (int i = 0; i < products.size(); i++) {
+            System.out.println((i + 1) + " : "+ products.get(i));
+        }
+    }
+    public void displayMaxMin(){
+        for (int i = 0; i < products.size(); i++) {
+            for (int j = products.size()-1; j >i ; j--) {
+                if (Integer.parseInt(products.get(j-1).getPrice())<Integer.parseInt(products.get(j).getPrice())){
+                    Product temp = products.get(j);
+                    products.set(j,products.get(j-1));
+                    products.set(j-1,temp);
+
+                }
+            }
+        }
+        for (int i = 0; i < products.size(); i++) {
+            System.out.println((i + 1) + " : "+ products.get(i));
+        }
     }
     private void setIndex() {
         if (!products.isEmpty()) {

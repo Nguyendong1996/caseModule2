@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 public class ProductSold implements Serializable {
+    private static final long serialVersionUID = 123456789L;
     String nameProduct;
     String price;
     String quantity;
@@ -16,41 +17,15 @@ public class ProductSold implements Serializable {
         this.localDateTime = localDateTime;
     }
 
-    public ProductSold() {
-    }
-
-    public String getNameProduct() {
-        return nameProduct;
-    }
-
-    public void setNameProduct(String nameProduct) {
-        this.nameProduct = nameProduct;
-    }
-
     public String getPrice() {
         return price;
     }
-
-    public void setPrice(String price) {
-        this.price = price;
-    }
-
     public String getQuantity() {
         return quantity;
     }
-
-    public void setQuantity(String quantity) {
-        this.quantity = quantity;
-    }
-
     public LocalDateTime getLocalDateTime() {
         return localDateTime;
     }
-
-    public void setLocalDateTime(LocalDateTime localDateTime) {
-        this.localDateTime = localDateTime;
-    }
-
     @Override
     public String toString() {
         return "ProductSold{" +

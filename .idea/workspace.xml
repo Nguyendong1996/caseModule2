@@ -5,23 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73d64ea3-5ffe-4723-9ed5-aff09b006941" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/impl/BuyerManage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/impl/ProductSoldManage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/io/FileBuyer" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/io/FileProductSold" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Address.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Buyer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/ProductSold.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/system/MyMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/FileCategorys" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/FileProductSolds" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/FileProducts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/impl/CategoryManage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/impl/CategoryManage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/impl/ProductManage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/impl/ProductManage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/impl/SingleUpLoginManage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/impl/SingleUpLoginManage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/FileAccountAndPassWork" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/FileAccountAndPassWork" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/impl/ProductSoldManage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/impl/ProductSoldManage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/FileBuyer" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/FileBuyer" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/FileProduct" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/FileProduct" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/Generate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/Generate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Buyer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Buyer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ProductSold.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ProductSold.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/MyMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/MyMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +119,10 @@
       <updated>1690720505077</updated>
       <workItem from="1690720506235" duration="25547000" />
       <workItem from="1690811542707" duration="97080000" />
-      <workItem from="1691118538181" duration="9206000" />
+      <workItem from="1691118538181" duration="13680000" />
+      <workItem from="1691166397469" duration="701000" />
+      <workItem from="1691230232033" duration="2179000" />
+      <workItem from="1691241953341" duration="8970000" />
     </task>
     <servers />
   </component>
@@ -137,23 +139,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/impl/ProductSoldManage.java</url>
-          <line>145</line>
+          <line>146</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/impl/ProductSoldManage.java</url>
-          <line>168</line>
+          <line>165</line>
           <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/impl/ProductManage.java</url>
-          <line>242</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/impl/ProductManage.java</url>
-          <line>249</line>
-          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

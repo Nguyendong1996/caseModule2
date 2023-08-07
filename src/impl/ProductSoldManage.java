@@ -3,13 +3,14 @@ package impl;
 import model.ProductSold;
 import service.ReadAndWire;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class ProductSoldManage extends ReadAndWire {
     Scanner scanner;
-    private List<ProductSold> listProductSold;
-    private final String fileProductSold = "/Users/admin/IdeaProjects/CaseModule2/src/io/FileProductSold";
+    private List<ProductSold> listProductSold = new ArrayList<>();
+    private final String fileProductSold = "/Users/admin/IdeaProjects/CaseModule2/src/io/FileProductSolds";
 
     public ProductSoldManage() {
         this.scanner = new Scanner(System.in);
@@ -150,11 +151,7 @@ public class ProductSoldManage extends ReadAndWire {
         do {
             System.out.println("enter a year");
             year = scanner.nextLine();
-            if (checkValidate(year,"^\\d{4}")){
-                flag = true;
-                }else {
-                flag =false;
-            }
+            flag = checkValidate(year, "^\\d{4}");
         }while (!flag);
         for (ProductSold productSold : listProductSold) {
             if (Integer.parseInt(year) == productSold.getLocalDateTime().getYear()) {

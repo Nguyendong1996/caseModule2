@@ -3,7 +3,7 @@ package model;
 import java.io.Serializable;
 
 public class Buyer implements Serializable {
-    private static final long serialUID = 12345678;
+    private static final long serialVersionUID = 123456789L;
    private String name;
    private String numberPhone;
    private Address address;

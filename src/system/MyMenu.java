@@ -9,7 +9,6 @@ public class MyMenu {
     CategoryManage categoryManage = new CategoryManage();
     ProductManage productManage = new ProductManage(categoryManage);
     ProductSoldManage productSoldManage = new ProductSoldManage();
-    BuyerManage buyerManage = new BuyerManage();
     public MyMenu() {
         this.scanner = new Scanner(System.in);
 }public void menu(SingleUpLoginManage singleUpLoginManage
@@ -29,7 +28,7 @@ public class MyMenu {
                 System.out.println("What's your choice? Please re-enter !");
                 flag = false;
             }
-            if (choice < 0 || choice > 2) {
+            if (choice < 0 || choice > 3) {
                 System.out.println("What's your choice? Please re-enter !");
             } else {
                 switch (choice) {
@@ -50,7 +49,7 @@ public class MyMenu {
             System.out.println("1 :display Product !");
             System.out.println("2 : Search Product");
             System.out.println("3 : oder");
-            System.out.println("0 : exits !!!");
+            System.out.println("0 : exits !!!!");
             System.out.println("Enter your choice");
             try {
                 choice = Integer.parseInt(scanner.nextLine());
@@ -124,7 +123,7 @@ public class MyMenu {
             System.out.println("2 : Sales Center  ");
             System.out.println("3 : search sales");
             System.out.println("4 : single check and order confirmation");
-            System.out.println("0 : Exits !!!");
+            System.out.println("0 : Exits !");
             System.out.println("Enter your choice");
             try {
                 choice = Integer.parseInt(scanner.nextLine());
@@ -155,7 +154,7 @@ public class MyMenu {
                     System.out.println("Menu");
                     System.out.println("1 : single check ");
                     System.out.println("2 : order confirmation  ");
-                    System.out.println("0 : Exits !!!");
+                    System.out.println("0 : Exits !!!!");
                     System.out.println("Enter your choice");
                     try {
                         choice = Integer.parseInt(scanner.nextLine());
@@ -184,7 +183,7 @@ public class MyMenu {
                     System.out.println("2 : search by day ");
                     System.out.println("3 : search by month  ");
                     System.out.println("4 : search by year");
-                    System.out.println("0 : Exits !!!");
+                    System.out.println("0 : Exits !!");
                     System.out.println("Enter your choice");
                     try {
                         choice = Integer.parseInt(scanner.nextLine());
@@ -257,7 +256,7 @@ public class MyMenu {
                 System.out.println("What's your choice? Please re-enter !");
                 flag = false;
             }
-            if (choice<0||choice>4){
+            if (choice < 0||choice > 4){
                 System.out.println("What's your choice? Please re-enter !");
             }else {
                 switch (choice) {
@@ -309,7 +308,7 @@ public class MyMenu {
         int choice = 0;
         boolean flag;
         do {
-            System.out.println("---------------------------------------------");
+            System.out.println("--------------------------------------------");
             System.out.println("Menu");
             System.out.println("1 : inventory  by category");
             System.out.println("2 : display product with smaller quantity by quantity input");
@@ -340,6 +339,8 @@ public class MyMenu {
         do {
             System.out.println("1 : Search Product by nameProduct");
             System.out.println("2 : search Product by price range");
+            System.out.println("3 : Display Product min to max prices");
+            System.out.println("4 : Display Product max to min prices");
             System.out.println("0 : Exits!!!!!!!!");
             System.out.println("Enter your choice");
             try {
@@ -349,7 +350,7 @@ public class MyMenu {
                 System.out.println("What's your choice? Please re-enter !");
                 flag =false;
             }
-            if (choice<0|| choice >2){
+            if (choice<0|| choice >4){
                 System.out.println("What's your choice? Please re-enter !");
             }else {
                 switch (choice) {
@@ -359,6 +360,10 @@ public class MyMenu {
                     case 2:
                         productManage.searchByPrice();
                         break;
+                    case 3: productManage.displayMinMax();
+                    break;
+                    case 4: productManage.displayMaxMin();
+                    break;
                 }
             }
         }while (choice != 0||!flag);

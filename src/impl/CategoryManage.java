@@ -3,13 +3,15 @@ package impl;
 import model.Category;
 import service.Generate;
 import service.ReadAndWire;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class CategoryManage extends ReadAndWire implements Generate{
     Scanner scanner;
     private List<Category> categories;
-    private final String fileCategory = "/Users/admin/IdeaProjects/CaseModule2/src/io/FileCategory";
+    private final String fileCategory = "/Users/admin/IdeaProjects/CaseModule2/src/io/FileCategorys";
 
     public CategoryManage() {
         this.scanner = new Scanner(System.in);
@@ -27,6 +29,7 @@ public class CategoryManage extends ReadAndWire implements Generate{
     @Override
     public void add() {
         categories.add(getCategory());
+        System.out.println("successfully added category");
         write(fileCategory,categories);
     }
 
@@ -45,6 +48,7 @@ public class CategoryManage extends ReadAndWire implements Generate{
                     String name = scanner.nextLine();
                     if(name.equals("")){
                         categories.get(index-1).setNameCategory(categories.get(index-1).getNameCategory());
+                        System.out.println("successful category edit");
                     }else {
                     for (int j = 0; j < productManage.getProducts().size(); j++) {
                         if (productManage.getProducts().get(j).getCategory().getNameCategory().equals(categories.get(i).getNameCategory())){
@@ -52,6 +56,7 @@ public class CategoryManage extends ReadAndWire implements Generate{
                         }
                     }
                     categories.get(index-1).setNameCategory(name);
+                        System.out.println("successful category edit");
                 }
                     }
             }
@@ -69,7 +74,7 @@ public class CategoryManage extends ReadAndWire implements Generate{
     }
 
     @Override
-    public void delete(){};
+    public void delete(){}
     public void deleteCategory(ProductManage productManage) {
         display();
         System.out.println("input Category delete");
@@ -88,6 +93,7 @@ public class CategoryManage extends ReadAndWire implements Generate{
                 }
             }
                 categories.remove((input - 1));
+                System.out.println("successful category delete");
         }
         }
         }else {
@@ -102,7 +108,7 @@ public class CategoryManage extends ReadAndWire implements Generate{
         int index=0;
         try {index = Integer.parseInt(scanner.nextLine());}
         catch (Exception e){
-            System.out.println("you entered wrong . Please re-enter");;
+            System.out.println("you entered wrong . Please re-enter");
         }
         for (int i = 0; i < categories.size(); i++) {
             if ((index-1)== i){
